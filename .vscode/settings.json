@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "**/.git": false
+  },
+  // Auto update Table of Contents (TOC) on save or
+  "markdown.extension.toc.updateOnSave": false,
+  // Formatting when saving files
+  "editor.formatOnSave": true,
+  // Specify the format target by file type
+  "[markdown]": {
+    "editor.formatOnSave": true
+  },
+  "eslint.codeActionsOnSave.rules": null
+}

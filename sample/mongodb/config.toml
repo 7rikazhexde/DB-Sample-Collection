@@ -1,0 +1,18 @@
+title = "config file for MongoDB"
+
+# Database Info
+[database-ubuntu]
+HOST = 'ubuntu.local' # or '192.168.0.x'
+PORT = 27017
+USER = '[user]'
+PASSWORD = '[pw]'
+DATABASE = '[db]'
+COLLECTION = '[collection]'
+
+[database-mac]
+HOST = 'localhost'
+PORT = 27017
+USER = '[user]'
+PASSWORD = '[pw]'
+DATABASE = '[db]'
+COLLECTION = '[collection]'

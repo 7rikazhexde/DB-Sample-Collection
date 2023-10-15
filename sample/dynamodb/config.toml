@@ -1,0 +1,9 @@
+title = "config file for DynamoDB"
+
+# Database Info
+# Connection information is assumed to be already configured in AWSCLI
+[database-ubuntu]
+TABLE = '[Table_Name]'
+
+[database-mac]
+TABLE = '[Table_Name]'

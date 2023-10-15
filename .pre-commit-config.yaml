@@ -1,0 +1,118 @@
+# pre-commit stop running hooks after the first failure.
+fail_fast: true
+# A list of repository mappings
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    # Specify version or tag to use (as of 23.5.31)
+    rev: v4.4.0
+    hooks:
+      # Remove spaces at end of lines except markdown
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+        exclude: '(site|site/database|site/command\-line\-tool|site/markdown|site/search|site/aws|site/application|site/en|site/programming\-language|site/assets|site/raspberrypi|site/database/mariadb\-tips|site/command\-line\-tool/vi|site/command\-line\-tool/git|site/command\-line\-tool/vi/vi\-tips|site/command\-line\-tool/git/git\-tips|site/markdown/markdown\-tips|site/aws/dynamodb|site/aws/aws_cli\-tips|site/aws/dynamodb/dynamodb\-local\-tips|site/application/inkscape|site/application/obsidian|site/application/vscode|site/application/workflowy|site/application/inkscape/inkscape\-tips|site/application/inkscape/images|site/application/obsidian/obsidian\-tips|site/application/vscode/setting\-tips|site/application/vscode/images|site/application/vscode/extention\-tips|site/application/workflowy/workflowy\-tips|site/en/database|site/en/command\-line\-tool|site/en/markdown|site/en/aws|site/en/application|site/en/programming\-language|site/en/raspberrypi|site/en/database/mariadb\-tips|site/en/command\-line\-tool/vi|site/en/command\-line\-tool/git|site/en/command\-line\-tool/vi/vi\-tips|site/en/command\-line\-tool/git/git\-tips|site/en/markdown/markdown\-tips|site/en/aws/dynamodb|site/en/aws/aws_cli\-tips|site/en/aws/dynamodb/dynamodb\-local\-tips|site/en/application/inkscape|site/en/application/obsidian|site/en/application/vscode|site/en/application/workflowy|site/en/application/inkscape/inkscape\-tips|site/en/application/inkscape/images|site/en/application/obsidian/obsidian\-tips|site/en/application/vscode/setting\-tips|site/en/application/vscode/images|site/en/application/vscode/extention\-tips|site/en/application/workflowy/workflowy\-tips|site/en/programming\-language/applescript|site/en/programming\-language/python|site/en/programming\-language/applescript/example|site/en/programming\-language/python/mkdocs\-tips|site/en/programming\-language/python/post\-commit\-tips|site/en/programming\-language/python/images|site/en/programming\-language/python/pre\-commit\-tips|site/en/programming\-language/python/pymysql\-tips|site/en/programming\-language/python/dash\-plotly\-tips|site/en/programming\-language/python/mdformat\-tips|site/en/raspberrypi/raspberrypi\-ubuntu\-tips|site/programming\-language/applescript|site/programming\-language/python|site/programming\-language/applescript/example|site/programming\-language/python/mkdocs\-tips|site/programming\-language/python/post\-commit\-tips|site/programming\-language/python/images|site/programming\-language/python/pre\-commit\-tips|site/programming\-language/python/pymysql\-tips|site/programming\-language/python/dash\-plotly\-tips|site/programming\-language/python/mdformat\-tips|site/assets/images|site/assets/img|site/assets/javascripts|site/assets/stylesheets|site/assets/javascripts/lunr|site/assets/javascripts/workers|site/assets/javascripts/lunr/min|site/raspberrypi/raspberrypi\-ubuntu\-tips)/.*'
+      # Make the last line of the file a newline code
+      - id: end-of-file-fixer
+        # Unify line break code to LF
+        exclude: '(site|site/database|site/command\-line\-tool|site/markdown|site/search|site/aws|site/application|site/en|site/programming\-language|site/assets|site/raspberrypi|site/database/mariadb\-tips|site/command\-line\-tool/vi|site/command\-line\-tool/git|site/command\-line\-tool/vi/vi\-tips|site/command\-line\-tool/git/git\-tips|site/markdown/markdown\-tips|site/aws/dynamodb|site/aws/aws_cli\-tips|site/aws/dynamodb/dynamodb\-local\-tips|site/application/inkscape|site/application/obsidian|site/application/vscode|site/application/workflowy|site/application/inkscape/inkscape\-tips|site/application/inkscape/images|site/application/obsidian/obsidian\-tips|site/application/vscode/setting\-tips|site/application/vscode/images|site/application/vscode/extention\-tips|site/application/workflowy/workflowy\-tips|site/en/database|site/en/command\-line\-tool|site/en/markdown|site/en/aws|site/en/application|site/en/programming\-language|site/en/raspberrypi|site/en/database/mariadb\-tips|site/en/command\-line\-tool/vi|site/en/command\-line\-tool/git|site/en/command\-line\-tool/vi/vi\-tips|site/en/command\-line\-tool/git/git\-tips|site/en/markdown/markdown\-tips|site/en/aws/dynamodb|site/en/aws/aws_cli\-tips|site/en/aws/dynamodb/dynamodb\-local\-tips|site/en/application/inkscape|site/en/application/obsidian|site/en/application/vscode|site/en/application/workflowy|site/en/application/inkscape/inkscape\-tips|site/en/application/inkscape/images|site/en/application/obsidian/obsidian\-tips|site/en/application/vscode/setting\-tips|site/en/application/vscode/images|site/en/application/vscode/extention\-tips|site/en/application/workflowy/workflowy\-tips|site/en/programming\-language/applescript|site/en/programming\-language/python|site/en/programming\-language/applescript/example|site/en/programming\-language/python/mkdocs\-tips|site/en/programming\-language/python/post\-commit\-tips|site/en/programming\-language/python/images|site/en/programming\-language/python/pre\-commit\-tips|site/en/programming\-language/python/pymysql\-tips|site/en/programming\-language/python/dash\-plotly\-tips|site/en/programming\-language/python/mdformat\-tips|site/en/raspberrypi/raspberrypi\-ubuntu\-tips|site/programming\-language/applescript|site/programming\-language/python|site/programming\-language/applescript/example|site/programming\-language/python/mkdocs\-tips|site/programming\-language/python/post\-commit\-tips|site/programming\-language/python/images|site/programming\-language/python/pre\-commit\-tips|site/programming\-language/python/pymysql\-tips|site/programming\-language/python/dash\-plotly\-tips|site/programming\-language/python/mdformat\-tips|site/assets/images|site/assets/img|site/assets/javascripts|site/assets/stylesheets|site/assets/javascripts/lunr|site/assets/javascripts/workers|site/assets/javascripts/lunr/min|site/raspberrypi/raspberrypi\-ubuntu\-tips)/.*'
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      # toml syntax check
+      - id: check-toml
+      # yaml syntax check
+      - id: check-yaml
+        # args: [--unsafe]
+
+  # https://python-poetry.org/docs/pre-commit-hooks/#usage
+  - repo: https://github.com/python-poetry/poetry
+    # Cannot be executed with local designation (as of 23.5.31)
+    rev: 1.6.1
+    hooks:
+      - id: poetry-check
+        verbose: true
+      - id: poetry-lock
+        verbose: true
+      - id: poetry-export
+        args: [-f, requirements.txt, -o, requirements.txt]
+        verbose: true
+        files: ^pyproject\.toml$
+      - id: poetry-export
+        args: [--dev, -f, requirements.txt, -o, requirements-dev.txt]
+        verbose: true
+        files: ^pyproject\.toml$
+
+  #- repo: https://github.com/executablebooks/mdformat
+  #  rev: 0.7.17
+  #  hooks:
+  #    - id: mdformat
+  #      args: ["--check"]
+  #      additional_dependencies:
+  #        - mdformat-admon
+  #        - mdformat-footnote
+  #        - mdformat-frontmatter
+
+  # Reference: https://github.com/DavidAnson/markdownlint-cli2#overview
+  # > markdownlint-cli is a traditional command-line interface for markdownlint.
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.36.0
+    hooks:
+      - id: markdownlint
+        args: ["--config", ".markdownlint.jsonc", "README.md"]
+
+  # Reference: https://github.com/DavidAnson/markdownlint-cli2#overview
+  # > markdownlint-cli2はmarkdownlint用の少し型破りなコマンドラインインターフェイスです。
+  # > markdownlint-cli2は設定ベースで、速度とシンプルさを優先しています。
+  # > markdownlint-cli2はmarkdownlint-cliのすべての機能をサポートしています（少し異なる場合もあります）。
+  #- repo: https://github.com/DavidAnson/markdownlint-cli2
+  #  rev: v0.10.0
+  #  hooks:
+  #    - id: markdownlint-cli2
+  #      args:
+  #        [
+  #          "--fix",
+  #          "--config",
+  #          ".markdownlint.jsonc",
+  #          "README.md",
+  #          "docs/**/*.md",
+  #        ]
+
+  # Repository local hooks
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        stages: [commit]
+        language: system
+        entry: poetry run black sample ci
+        types: [python]
+        exclude: resources_bin.py
+
+      - id: ruff
+        name: ruff
+        stages: [commit]
+        language: system
+        entry: poetry run ruff sample ci --fix
+        types: [python]
+
+      #- id: mypy
+      #  name: mypy
+      #  stages: [commit]
+      #  language: system
+      #  entry: poetry run mypy
+      #  types: [python]
+
+      #- id: mdformat
+      #  name: mdformat
+      #  stages: [commit]
+      #  language: system
+      #  entry: poetry run mdformat .
+      #  types: [markdown]
+
+      # Original script
+      #- id: update-pyproject
+      #  name: Update pyproject.toml version
+      #  entry: poetry run python ci/update_pyproject_version.py
+      #  language: system
+      #  verbose: true
+      #  pass_filenames: false
+      #  stages: [commit]
+      #  additional_dependencies: []

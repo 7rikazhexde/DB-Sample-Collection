@@ -1,0 +1,17 @@
+title = "config file for MariaDB"
+
+# Database Info
+[database-ubuntu]
+#HOST = '192.168.0.x'
+HOST = 'ubuntu.local'
+PORT = 3306
+USER = '[user]'
+PASSWORD = '[pw]'
+DATABASE = '[db]'
+
+[database-mac]
+HOST = 'localhost'
+PORT = 3306
+USER = '[user]'
+PASSWORD = '[pw]'
+DATABASE = '[db]'
