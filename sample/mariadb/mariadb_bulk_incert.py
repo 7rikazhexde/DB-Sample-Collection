@@ -7,6 +7,10 @@ from tomlkit.toml_file import TOMLFile
 
 
 def main():
+    """data insertion process
+
+    Note: Please refer to setup.md to create the table before execution.
+    """
     # Obtaining database connection information
     toml = TOMLFile("./config.toml")
     toml_data = toml.read()
@@ -42,7 +46,7 @@ def main():
 
                 # Create SQL query
                 insert_query = """
-                    INSERT INTO ec_sol_pes_tbl (date, action, ps_data1, ps_data2, ps_data3, ps_data4, ps_data5,
+                    INSERT INTO sample_tbl1 (date, action, ps_data1, ps_data2, ps_data3, ps_data4, ps_data5,
                                                 ps_data6, ps_data7, ps_data8, ps_data9, ps_data10, ps_data11,
                                                 ps_data12, ps_data13, ps_data14, ps_data15, ps_data16, ps_data17,
                                                 ps_data18, ps_data19, ps_data20, ps_data21, ps_data22, ps_data23,

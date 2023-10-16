@@ -17,6 +17,7 @@ PORT = int(toml_get_data["PORT"])
 USER = toml_get_data["USER"]
 PASSWORD = toml_get_data["PASSWORD"]
 DATABASE = toml_get_data["DATABASE"]
+TABLE = toml_get_data["TABLE"]
 
 # Connect to SQL (MariaDB)
 db = pymysql.connect(
@@ -27,10 +28,10 @@ db = pymysql.connect(
 cursor = db.cursor()
 
 # Execute SQL query to get minimum and maximum dates
-cursor.execute("SELECT MIN(date), MAX(date) FROM ec_sol_pes_tbl")
+cursor.execute(f"SELECT MIN(date), MAX(date) FROM {TABLE}")
 min_date, max_date = cursor.fetchone()
-print(min_date)
-print(max_date)
+# print(min_date)
+# print(max_date)
 
 # Create a Dash application
 app = Dash(external_stylesheets=[dbc.themes.FLATLY])
@@ -70,7 +71,7 @@ def update_graph(n_clicks, start_date, end_date):
 
         # Execute SQL query.
         cursor.execute(
-            "SELECT date, ps_data3, ps_data4 FROM ec_sol_pes_tbl WHERE date BETWEEN %s AND %s",
+            f"SELECT date, ps_data3, ps_data4 FROM {TABLE} WHERE date BETWEEN %s AND %s",
             (start_date, end_date),
         )
 
@@ -79,9 +80,9 @@ def update_graph(n_clicks, start_date, end_date):
 
         # Split data into date and ps_data3, ps_data4
         dates = [row[0] for row in data]
-        print(type(dates))
+        # print(type(dates))
         dates = pd.to_datetime([row[0] for row in data])
-        print(type(dates))
+        # print(type(dates))
         ps_data3 = [row[1] for row in data]
         ps_data4 = [row[2] for row in data]
 

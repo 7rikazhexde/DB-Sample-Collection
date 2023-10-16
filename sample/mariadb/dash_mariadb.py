@@ -13,6 +13,7 @@ PORT = int(toml_get_data["PORT"])
 USER = toml_get_data["USER"]
 PASSWORD = toml_get_data["PASSWORD"]
 DATABASE = toml_get_data["DATABASE"]
+TABLE = toml_get_data["TABLE"]
 
 # Connect to SQL (MariaDB)
 db = pymysql.connect(
@@ -23,7 +24,7 @@ db = pymysql.connect(
 cursor = db.cursor()
 
 # Execute SQL query
-cursor.execute("SELECT date, ps_data3, ps_data4 FROM ec_sol_pes_tbl")
+cursor.execute(f"SELECT date, ps_data3, ps_data4 FROM {TABLE}")
 
 # Fetch all the rows
 data = cursor.fetchall()
