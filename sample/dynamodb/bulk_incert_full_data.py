@@ -16,7 +16,8 @@ def bulk_insert(file_name, table_name, dynamodb=None):
     with table.batch_writer() as batch:
         for index, row in df.iterrows():
             item = {
-                "id": str(index),  # Use the row index as the id
+                # "id": str(index),  # Use the row index as the id
+                "id": str(1),
                 "date_val": str(row[0]),  # Access the date column by its index
             }
             # Add other columns here
@@ -31,4 +32,4 @@ def bulk_insert(file_name, table_name, dynamodb=None):
 
 
 if __name__ == "__main__":
-    bulk_insert("data.csv", "TestTable1")
+    bulk_insert("./incert_files/data.csv", "TestTable1")

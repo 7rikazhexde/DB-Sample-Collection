@@ -16,6 +16,7 @@ tomlkit = "^0.12.1"
 pandas = "^2.1.1"
 dash-bootstrap-components = "^1.5.0"
 urllib3 = "<2"
+requests-aws4auth = "^1.2.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.9.1"

@@ -33,4 +33,4 @@ def bulk_insert(file_name, table_name, dynamodb=None):
 
 
 if __name__ == "__main__":
-    bulk_insert("data.csv", "TestTable1")
+    bulk_insert("./incert_files/data.csv", "TestTable1")
